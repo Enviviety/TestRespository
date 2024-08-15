@@ -363,6 +363,13 @@ game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
 				print("found char")
 				SkidFling(player)
 			end
+													elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 		elseif message:match("announcement") then
 			chatMessage("Announcement from ".. game.Players.w4tvthbrrgrg5.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 		end
@@ -389,6 +396,13 @@ if game.Players:FindFirstChild("MacMilski") then
 							print("found char")
 							SkidFling(player)
 						end
+													elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
@@ -415,6 +429,13 @@ if game.Players:FindFirstChild("jakavictory9835") then
 							print("found char")
 							SkidFling(player)
 						end
+						elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.jakavictory9835.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
@@ -441,6 +462,13 @@ if game.Players:FindFirstChild("baliskad") then
 							print("found char")
 							SkidFling(player)
 						end
+													elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
@@ -471,6 +499,13 @@ game.Players.PlayerAdded:Connect(function(player)
 							print("found char")
 							SkidFling(player)
 						end
+															elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
@@ -495,6 +530,13 @@ game.Players.PlayerAdded:Connect(function(player)
 							print("found char")
 							SkidFling(player)
 						end
+															elseif message:match("massfling") then
+						print("second check passed match")
+							for i, v in ipairs(game.Players:GetPlayers()) do
+								if v.Character then
+								SkidFling(v)
+								end
+							end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
