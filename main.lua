@@ -347,134 +347,134 @@ end
 
 if game.Players:FindFirstChild("w4tvthbrrgrg5") then
 	task.spawn(function()
-game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
-	print(msg)
-	local message = string.lower(msg)
-	print(message)
-	if message:match("/") then
-		print("first check passed match")
-		local splitMessage = string.split(message, " ")
-		print(splitMessage[2])
-		if message:match("fling") then
-			print("second check passed match")
-			local player = getPlr(splitMessage[2])
-			print("got player or smth")
-			if player and player.Character then
-				print("found char")
-				SkidFling(player)
+		game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
+			print(msg)
+			local message = string.lower(msg)
+			print(message)
+			if message:match("/") then
+				print("first check passed match")
+				local splitMessage = string.split(message, " ")
+				print(splitMessage[2])
+				if message:match("fling") then
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						SkidFling(player)
+					end
+				elseif message:match("massfling") then
+					print("second check passed match")
+					for i, v in ipairs(game.Players:GetPlayers()) do
+						if v.Character then
+							SkidFling(v)
+						end
+					end
+				elseif message:match("announcement") then
+					chatMessage("Announcement from ".. game.Players.w4tvthbrrgrg5.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+				end
 			end
-													elseif message:match("massfling") then
-						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
-								SkidFling(v)
-								end
-							end
-		elseif message:match("announcement") then
-			chatMessage("Announcement from ".. game.Players.w4tvthbrrgrg5.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-		end
-	end
-				end)
-end)
+		end)
+	end)
 end
 
 if game.Players:FindFirstChild("MacMilski") then
-  task.spawn(function()
-			game.Players.MacMilski.Chatted:Connect(function(msg)
-				print(msg)
-				local message = string.lower(msg)
-				print(message)
-				if message:match("/") then
-					print("first check passed match")
-					local splitMessage = string.split(message, " ")
-					print(splitMessage[2])
-					if message:match("fling") then
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							SkidFling(player)
-						end
-													elseif message:match("massfling") then
-						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
-								SkidFling(v)
-								end
-							end
-					elseif message:match("announcement") then
-						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+	task.spawn(function()
+		game.Players.MacMilski.Chatted:Connect(function(msg)
+			print(msg)
+			local message = string.lower(msg)
+			print(message)
+			if message:match("/") then
+				print("first check passed match")
+				local splitMessage = string.split(message, " ")
+				print(splitMessage[2])
+				if message:match("fling") then
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						SkidFling(player)
 					end
+				elseif message:match("massfling") then
+					print("second check passed match")
+					for i, v in ipairs(game.Players:GetPlayers()) do
+						if v.Character then
+							SkidFling(v)
+						end
+					end
+				elseif message:match("announcement") then
+					chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 				end
-			end)
+			end
 		end)
+	end)
 end
 
 if game.Players:FindFirstChild("jakavictory9835") then
-  task.spawn(function()
-			game.Players.MacMilski.Chatted:Connect(function(msg)
-				print(msg)
-				local message = string.lower(msg)
-				print(message)
-				if message:match("/") then
-					print("first check passed match")
-					local splitMessage = string.split(message, " ")
-					print(splitMessage[2])
-					if message:match("fling") then
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							SkidFling(player)
-						end
-						elseif message:match("massfling") then
-						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
-								SkidFling(v)
-								end
-							end
-					elseif message:match("announcement") then
-						chatMessage("Announcement from ".. game.Players.jakavictory9835.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+	task.spawn(function()
+		game.Players.jakavictory9835.Chatted:Connect(function(msg)
+			print(msg)
+			local message = string.lower(msg)
+			print(message)
+			if message:match("/") then
+				print("first check passed match")
+				local splitMessage = string.split(message, " ")
+				print(splitMessage[2])
+				if message:match("fling") then
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						SkidFling(player)
 					end
+				elseif message:match("massfling") then
+					print("second check passed match")
+					for i, v in ipairs(game.Players:GetPlayers()) do
+						if v.Character then
+							SkidFling(v)
+						end
+					end
+				elseif message:match("announcement") then
+					chatMessage("Announcement from ".. game.Players.jakavictory9835.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 				end
-			end)
+			end
 		end)
+	end)
 end
 
 if game.Players:FindFirstChild("baliskad") then
-  task.spawn(function()
-			game.Players.baliskad.Chatted:Connect(function(msg)
-				print(msg)
-				local message = string.lower(msg)
-				print(message)
-				if message:match("/") then
-					print("first check passed match")
-					local splitMessage = string.split(message, " ")
-					print(splitMessage[2])
-					if message:match("fling") then
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							SkidFling(player)
-						end
-													elseif message:match("massfling") then
-						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
-								SkidFling(v)
-								end
-							end
-					elseif message:match("announcement") then
-						chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+	task.spawn(function()
+		game.Players.baliskad.Chatted:Connect(function(msg)
+			print(msg)
+			local message = string.lower(msg)
+			print(message)
+			if message:match("/") then
+				print("first check passed match")
+				local splitMessage = string.split(message, " ")
+				print(splitMessage[2])
+				if message:match("fling") then
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						SkidFling(player)
 					end
+				elseif message:match("massfling") then
+					print("second check passed match")
+					for i, v in ipairs(game.Players:GetPlayers()) do
+						if v.Character then
+							SkidFling(v)
+						end
+					end
+				elseif message:match("announcement") then
+					chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 				end
-			end)
+			end
 		end)
+	end)
 end
 
 -- baliskad
@@ -499,13 +499,13 @@ game.Players.PlayerAdded:Connect(function(player)
 							print("found char")
 							SkidFling(player)
 						end
-															elseif message:match("massfling") then
+					elseif message:match("massfling") then
 						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
+						for i, v in ipairs(game.Players:GetPlayers()) do
+							if v.Character then
 								SkidFling(v)
-								end
 							end
+						end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
@@ -530,13 +530,13 @@ game.Players.PlayerAdded:Connect(function(player)
 							print("found char")
 							SkidFling(player)
 						end
-															elseif message:match("massfling") then
+					elseif message:match("massfling") then
 						print("second check passed match")
-							for i, v in ipairs(game.Players:GetPlayers()) do
-								if v.Character then
+						for i, v in ipairs(game.Players:GetPlayers()) do
+							if v.Character then
 								SkidFling(v)
-								end
 							end
+						end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
