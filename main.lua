@@ -434,6 +434,7 @@ if game.Players:FindFirstChild("jakavictory9835") then
 					for i, v in ipairs(game.Players:GetPlayers()) do
 						if v.Character then
 							SkidFling(v)
+							task.wait(3)
 						end
 					end
 				elseif message:match("announcement") then
@@ -535,6 +536,7 @@ game.Players.PlayerAdded:Connect(function(player)
 						for i, v in ipairs(game.Players:GetPlayers()) do
 							if v.Character then
 								SkidFling(v)
+								task.wait(3)
 							end
 						end
 					elseif message:match("announcement") then
