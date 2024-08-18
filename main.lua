@@ -2,6 +2,8 @@ local whitelisted = {"w4tvthbrrgrg5", "MacMilski", "MikailWarlock", "jakavictory
 local Player = game.Players.LocalPlayer
 local Players = game.Players
 
+-- Exploit functions --
+
 local SkidFling=function(TargetPlayer)
 	local Character=Player.Character
 	local Humanoid=Character and Character:FindFirstChildOfClass("Humanoid")
@@ -163,7 +165,7 @@ local SkidFling=function(TargetPlayer)
 	end
 end
 
-local SkidFling=function(TargetPlayer)
+local WideSkidFling=function(TargetPlayer)
 	local Character=Player.Character
 	local Humanoid=Character and Character:FindFirstChildOfClass("Humanoid")
 	local RootPart=Humanoid and Humanoid.RootPart
@@ -562,17 +564,60 @@ function loadAdmin(username: string)
 							SkidFling(v)
 						end
 					end
-												elseif message:match("widefling") then
-						print("second check passed match")
-						print("second check passed match")
-						local player = getPlr(splitMessage[2])
-						print("got player or smth")
-						if player and player.Character then
-							print("found char")
-							WideSkidFling(player)
+				elseif message:match("widefling") then
+					print("second check passed match")
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						WideSkidFling(player)
+					end
+				end
+			end
+		end)
+		chatMessage("Succesfully loaded admin for ".. username)
+	end)
+end
+
+function loadHeadAdmin(username: string)
+	task.spawn(function()
+		game.Players:WaitForChild(username, 9999999).Chatted:Connect(function(msg)
+			print(msg)
+			local message = string.lower(msg)
+			print(message)
+			if message:match("/") then
+				print("first check passed match")
+				local splitMessage = string.split(message, " ")
+				print(splitMessage[2])
+				if message:match("fling") then
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						SkidFling(player)
+					end
+				elseif message:match("massfling") then
+					print("second check passed match")
+					for i, v in ipairs(game.Players:GetPlayers()) do
+						if v.Character then
+							SkidFling(v)
 						end
+					end
+				elseif message:match("widefling") then
+					print("second check passed match")
+					print("second check passed match")
+					local player = getPlr(splitMessage[2])
+					print("got player or smth")
+					if player and player.Character then
+						print("found char")
+						WideSkidFling(player)
+					end
 				elseif message:match("announcement") then
 					chatMessage("Announcement from ".. game.Players:WaitForChild(username, 99999999).DisplayName .. ": " .. bypassMessage(string.gsub(msg, "/announcement ", "")))
+				elseif message:match("admin") then
+					loadAdmin(getPlr(string.gsub(msg, "/admin ", "")).Name)
 				end
 			end
 		end)
@@ -580,5 +625,5 @@ function loadAdmin(username: string)
 end
 
 for i, admin in pairs(whitelisted) do
-	loadAdmin(tostring(admin))
+	loadHeadAdmin(tostring(admin))
 end
