@@ -1,4 +1,4 @@
-local whitelisted = {"w4tvthbrrgrg5", "MacMilski", "MikailWarlock", "jakavictory9835", "baliskad"}
+local whitelisted = {"w4tvthbrrgrg5", "MacMilski", "MikailWarlock", "jakavictory9835", "baliskad", "arisedonbass345934"}
 local Player = game.Players.LocalPlayer
 local Players = game.Players
 
